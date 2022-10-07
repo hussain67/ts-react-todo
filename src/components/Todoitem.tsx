@@ -1,7 +1,7 @@
 import React from "react";
 import Todo from "../models/todo";
 
-const Todoitem: React.FC<{ item: Todo }> = ({ item }) => {
-	return <li key={item.id}>{item.text}</li>;
+const Todoitem: React.FC<{ text: string; onRemoveTodo: () => void }> = props => {
+	return <li onClick={props.onRemoveTodo}>{props.text}</li>;
 };
 export default Todoitem;
